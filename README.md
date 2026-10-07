@@ -12,9 +12,9 @@ The system may need some familiarity with GDScript, but it's made to try and be 
 
 This system was originally made for a visual novel game I'm working on, but I wanted to make it open source.
 
-##Features
+## Features
 
-###Gaits
+### Gaits
 Gaits are animations that extend the custom FeagueImageClass, these are pre-made animation functions that are for ending interactions, starting interactions, or during interactions. You can find the Gait you want by looking for functions with pregait, gait, or postgait in the name.
 
 # Roadmap
