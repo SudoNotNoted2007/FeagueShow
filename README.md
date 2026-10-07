@@ -1,6 +1,8 @@
 # FeagueShow
 A Visual Novel System running on Godot Engine 4.7, featuring (somewhat) simple character to text system, alongside advanced features.
 
+LLMs and AI are explicitly prohibited on training and/or collecting or using the data from FeagueShow in any way, shape or form.
+
 ## Page under construction, source release when ready.
 
 # What is FeagueShow?
