@@ -1,0 +1,129 @@
+[gd_scene format=3 uid="uid://j4dhyme5yoev"]
+
+[ext_resource type="Script" uid="uid://bc0mtum5uefup" path="res://classes/handler.gd" id="1_4abw6"]
+[ext_resource type="Script" uid="uid://bmqumkqryvnd2" path="res://classes/text_information.gd" id="2_rq6mf"]
+[ext_resource type="Texture2D" uid="uid://qr0agox8fhaw" path="res://sample/Horse-b.svg" id="3_rq6mf"]
+[ext_resource type="Script" uid="uid://c6fonox5y1crw" path="res://classes/feagueimgclass.gd" id="4_fe1sw"]
+[ext_resource type="Texture2D" uid="uid://c1ag4a65rwkmo" path="res://sample/Horse-a.svg" id="4_iywlf"]
+[ext_resource type="Texture2D" uid="uid://bbtiqthh2nbb3" path="res://sample/RUID77c6182b3cf34adf88c476f8aa21d67b.png" id="5_74ovw"]
+
+[sub_resource type="Resource" id="Resource_4abw6"]
+script = ExtResource("2_rq6mf")
+sprite_to_load = ExtResource("3_rq6mf")
+text = "Gosh, what a feague day in the FOSS stable!"
+metadata/_custom_type_script = "uid://bmqumkqryvnd2"
+
+[sub_resource type="Resource" id="Resource_fe1sw"]
+script = ExtResource("2_rq6mf")
+sprite_to_load = ExtResource("4_iywlf")
+text = "You know what FOSS stands for?"
+text_speed = 0.02
+metadata/_custom_type_script = "uid://bmqumkqryvnd2"
+
+[sub_resource type="Resource" id="Resource_74ovw"]
+script = ExtResource("2_rq6mf")
+text = "Feague and Open Source Software!!! "
+text_speed = 0.01
+metadata/_custom_type_script = "uid://bmqumkqryvnd2"
+
+[sub_resource type="Resource" id="Resource_nohr3"]
+script = ExtResource("2_rq6mf")
+text = "[font_size=12]im so funny! feagunny![/font_size]        Now anyways, where's that [wave amp=50.0 freq=10.0]Leo Leo Macbook Neo???[/wave]"
+text_speed = 0.03
+metadata/_custom_type_script = "uid://bmqumkqryvnd2"
+
+[sub_resource type="Resource" id="Resource_iywlf"]
+script = ExtResource("2_rq6mf")
+sprite_to_load = ExtResource("5_74ovw")
+text = "[rainbow freq=1.0 sat =0.5 val =1.0 speed=1.0][wave amp=50.0 freq=10.0]i gotta get freaky deaky with that guy!"
+name = "the REAL horseton"
+metadata/_custom_type_script = "uid://bmqumkqryvnd2"
+
+[node name="scene" type="CanvasLayer" unique_id=755989780]
+
+[node name="scene" type="Control" parent="." unique_id=258810079]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="handler" type="Control" parent="scene" unique_id=135562789]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_4abw6")
+scene_data = Array[Object]([SubResource("Resource_4abw6"), SubResource("Resource_fe1sw"), SubResource("Resource_74ovw"), SubResource("Resource_nohr3"), SubResource("Resource_iywlf")])
+
+[node name="Timer" type="Timer" parent="scene/handler" unique_id=2124726179]
+
+[node name="debug_image" type="TextureRect" parent="scene" unique_id=15647865]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -200.0
+offset_right = 200.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 50)
+offset_transform_scale = Vector2(2, 0.1)
+expand_mode = 2
+script = ExtResource("4_fe1sw")
+metadata/_custom_type_script = "uid://c6fonox5y1crw"
+
+[node name="textbox" type="PanelContainer" parent="scene" unique_id=473922102]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(800, 200)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0.5, 2.5)
+
+[node name="debugger" type="RichTextLabel" parent="scene/textbox" unique_id=1922287144]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0.9, 0.9)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.80784315)
+theme_override_constants/shadow_outline_size = 10
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 24
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="scene" unique_id=2130410239]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 376.0
+offset_top = 124.0
+offset_right = 423.0
+offset_bottom = 147.0
+offset_transform_enabled = true
+offset_transform_position = Vector2(-200, -200)
+text = "NAME"
+
+[connection signal="timeout" from="scene/handler/Timer" to="scene/handler" method="_on_timer_timeout"]
