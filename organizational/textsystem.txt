@@ -1,0 +1,6 @@
+TEXT SYSTEM HOW IT WORKS
+
+TextInformation class stores values like the sprite to load, text itself, and formatting if needed.
+
+A handler will hold array data for that scene, so when the text is completely done, it'll load more
+from the custom data type.

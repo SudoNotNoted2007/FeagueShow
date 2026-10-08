@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://dcm5tskg8mtqh"]
+
+[ext_resource type="Script" uid="uid://bc0mtum5uefup" path="res://addons/feagueshow/classes/handler.gd" id="1_i4h1t"]
+[ext_resource type="Script" uid="uid://bmqumkqryvnd2" path="res://addons/feagueshow/classes/text_information.gd" id="2_h4eyl"]
+[ext_resource type="Script" uid="uid://cc0vnbtbw3gxa" path="res://addons/feagueshow/classes/eventmetadataclass.gd" id="5_365wx"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hf65i"]
+load_path = "res://.godot/imported/Horse-b.svg-59f571c5ea048794d5af58da945ab93b.ctex"
+
+[sub_resource type="Resource" id="Resource_4abw6"]
+script = ExtResource("2_h4eyl")
+sprite_to_load = SubResource("CompressedTexture2D_hf65i")
+text = "This is a sample for FeagueShow v1.0!"
+metadata/_custom_type_script = "uid://bmqumkqryvnd2"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_aoot0"]
+load_path = "res://.godot/imported/Horse-a.svg-9d519991af7d14557ab5c5bec36861b7.ctex"
+
+[sub_resource type="Resource" id="Resource_fe1sw"]
+script = ExtResource("2_h4eyl")
+sprite_to_load = SubResource("CompressedTexture2D_aoot0")
+text = "You can change sprites seamlessly with the TextInformation class, alongside text speed!"
+text_speed = 0.02
+metadata/_custom_type_script = "uid://bmqumkqryvnd2"
+
+[sub_resource type="Resource" id="Resource_74ovw"]
+script = ExtResource("2_h4eyl")
+text = "It gets better, you can call custom screen effects and functions using the Specialfx property! something like _hop_away_postgait works!"
+text_speed = 0.01
+specialfx = "_hop_away_postgait"
+metadata/_custom_type_script = "uid://bmqumkqryvnd2"
+
+[sub_resource type="Resource" id="Resource_nohr3"]
+script = ExtResource("2_h4eyl")
+text = "[font_size=12]Small text![/font_size]You can even use Godot's[wave amp=50.0 freq=10.0] BBCode, and it work's seamlessly.[/wave]"
+text_speed = 0.03
+metadata/_custom_type_script = "uid://bmqumkqryvnd2"
+
+[sub_resource type="Resource" id="Resource_0wfuh"]
+script = ExtResource("5_365wx")
+metadata/_custom_type_script = "uid://cc0vnbtbw3gxa"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pesgf"]
+load_path = "res://.godot/imported/RUID77c6182b3cf34adf88c476f8aa21d67b.png-aaa61857a60097cc004e98c308546997.ctex"
+
+[sub_resource type="Resource" id="Resource_iywlf"]
+script = ExtResource("2_h4eyl")
+sprite_to_load = SubResource("CompressedTexture2D_pesgf")
+text = "[rainbow freq=1.0 sat =0.5 val =1.0 speed=1.0][wave amp=50.0 freq=10.0]Choose a postgait you want to see, and the interaction will end here!"
+name = "the REAL horseton"
+metadata = SubResource("Resource_0wfuh")
+metadata/_custom_type_script = "uid://bmqumkqryvnd2"
+
+[node name="handler" type="Control" unique_id=1139405906]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_i4h1t")
+scene_data = Array[Object]([SubResource("Resource_4abw6"), SubResource("Resource_fe1sw"), SubResource("Resource_74ovw"), SubResource("Resource_nohr3"), SubResource("Resource_iywlf")])
+
+[node name="Timer" type="Timer" parent="." unique_id=1254993122]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

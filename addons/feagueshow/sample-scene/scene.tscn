@@ -1,0 +1,205 @@
+[gd_scene format=3 uid="uid://j4dhyme5yoev"]
+
+[ext_resource type="Script" uid="uid://bc0mtum5uefup" path="res://addons/feagueshow/classes/handler.gd" id="1_hf65i"]
+[ext_resource type="Script" uid="uid://bmqumkqryvnd2" path="res://addons/feagueshow/classes/text_information.gd" id="2_aoot0"]
+[ext_resource type="Script" uid="uid://cc0vnbtbw3gxa" path="res://addons/feagueshow/classes/eventmetadataclass.gd" id="3_pesgf"]
+[ext_resource type="Script" uid="uid://c6fonox5y1crw" path="res://addons/feagueshow/classes/feagueimgclass.gd" id="4_qsef2"]
+[ext_resource type="Script" uid="uid://cpura17qapct4" path="res://addons/feagueshow/classes/OptionsClass.gd" id="5_iwt7a"]
+[ext_resource type="Script" uid="uid://j4r7acugbvn6" path="res://addons/feagueshow/classes/FuncButton.gd" id="6_vi1wl"]
+[ext_resource type="Texture2D" uid="uid://ba7bp24xcif8r" path="res://icon.svg" id="10_o1uyt"]
+
+[sub_resource type="Resource" id="Resource_4abw6"]
+script = ExtResource("2_aoot0")
+sprite_to_load = ExtResource("10_o1uyt")
+text = "This is a sample for FeagueShow v1.0!"
+metadata/_custom_type_script = "uid://bmqumkqryvnd2"
+
+[sub_resource type="Resource" id="Resource_fe1sw"]
+script = ExtResource("2_aoot0")
+sprite_to_load = ExtResource("10_o1uyt")
+text = "You can change sprites seamlessly with the TextInformation class, alongside text speed!"
+text_speed = 0.02
+metadata/_custom_type_script = "uid://bmqumkqryvnd2"
+
+[sub_resource type="Resource" id="Resource_74ovw"]
+script = ExtResource("2_aoot0")
+sprite_to_load = ExtResource("10_o1uyt")
+text = "It gets better, you can call custom screen effects and functions using the Specialfx property! something like _hop_away_postgait works!"
+text_speed = 0.01
+specialfx = "_hop_away_postgait"
+metadata/_custom_type_script = "uid://bmqumkqryvnd2"
+
+[sub_resource type="Resource" id="Resource_nohr3"]
+script = ExtResource("2_aoot0")
+sprite_to_load = ExtResource("10_o1uyt")
+text = "[font_size=12]Small text![/font_size]You can even use Godot's[wave amp=50.0 freq=10.0] BBCode, and it work's seamlessly.[/wave]"
+text_speed = 0.03
+metadata/_custom_type_script = "uid://bmqumkqryvnd2"
+
+[sub_resource type="Resource" id="Resource_0wfuh"]
+script = ExtResource("3_pesgf")
+metadata/_custom_type_script = "uid://cc0vnbtbw3gxa"
+
+[sub_resource type="Resource" id="Resource_iywlf"]
+script = ExtResource("2_aoot0")
+sprite_to_load = ExtResource("10_o1uyt")
+text = "[rainbow freq=1.0 sat =0.5 val =1.0 speed=1.0][wave amp=50.0 freq=10.0]Choose a postgait you want to see, and the interaction will end here!"
+name = "the REAL horseton"
+metadata = SubResource("Resource_0wfuh")
+metadata/_custom_type_script = "uid://bmqumkqryvnd2"
+
+[sub_resource type="Resource" id="Resource_5064g"]
+script = ExtResource("2_aoot0")
+sprite_to_load = ExtResource("10_o1uyt")
+text = "Great, I'll show you a postgait!"
+metadata/_custom_type_script = "uid://bmqumkqryvnd2"
+
+[sub_resource type="Resource" id="Resource_cku4k"]
+script = ExtResource("2_aoot0")
+sprite_to_load = ExtResource("10_o1uyt")
+text = "This release still lacks metadata for FuncButtons, alongside some other quality of life features. Please be patient!"
+specialfx = "_hop_away_postgait"
+metadata/_custom_type_script = "uid://bmqumkqryvnd2"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qsef2"]
+load_path = "res://.godot/imported/binksanta.png-2e4cbc718c51b5128a1e0262428c1da5.ctex"
+
+[sub_resource type="Resource" id="Resource_vx52n"]
+script = ExtResource("2_aoot0")
+sprite_to_load = SubResource("CompressedTexture2D_qsef2")
+text = "golly bink willikers!"
+name = "binksanta"
+metadata/_custom_type_script = "uid://bmqumkqryvnd2"
+
+[node name="scene" type="CanvasLayer" unique_id=755989780]
+
+[node name="scene" type="Control" parent="." unique_id=258810079]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="handler" type="Control" parent="scene" unique_id=135562789]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_hf65i")
+scene_data = Array[Object]([SubResource("Resource_4abw6"), SubResource("Resource_fe1sw"), SubResource("Resource_74ovw"), SubResource("Resource_nohr3"), SubResource("Resource_iywlf")])
+
+[node name="Timer" type="Timer" parent="scene/handler" unique_id=2124726179]
+
+[node name="debug_image" type="TextureRect" parent="scene" unique_id=15647865]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -200.0
+offset_right = 200.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 50)
+offset_transform_scale = Vector2(2, 0.1)
+expand_mode = 2
+script = ExtResource("4_qsef2")
+metadata/_custom_type_script = "uid://c6fonox5y1crw"
+
+[node name="textbox" type="PanelContainer" parent="scene" unique_id=473922102]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(800, 200)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0.5, 2.5)
+
+[node name="debugger" type="RichTextLabel" parent="scene/textbox" unique_id=1922287144]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0.9, 0.9)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.80784315)
+theme_override_constants/shadow_outline_size = 10
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 24
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="scene" unique_id=2130410239]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 376.0
+offset_top = 124.0
+offset_right = 423.0
+offset_bottom = 147.0
+offset_transform_enabled = true
+offset_transform_position = Vector2(-200, -200)
+text = "NAME"
+
+[node name="opt" type="VBoxContainer" parent="scene" unique_id=1029109840]
+unique_name_in_owner = true
+visible = false
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -20.0
+offset_bottom = 238.0
+grow_horizontal = 0
+grow_vertical = 2
+offset_transform_enabled = true
+script = ExtResource("5_iwt7a")
+metadata/_custom_type_script = "uid://cpura17qapct4"
+
+[node name="Button" type="Button" parent="scene/opt" unique_id=348393959]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+disabled = true
+text = "choic4 1"
+script = ExtResource("6_vi1wl")
+new_scene_data = Array[ExtResource("2_aoot0")]([SubResource("Resource_5064g"), SubResource("Resource_cku4k")])
+metadata/_custom_type_script = "uid://j4r7acugbvn6"
+
+[node name="HSeparator" type="HSeparator" parent="scene/opt" unique_id=1074968284]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="scene/opt" unique_id=348127014]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+disabled = true
+text = "choic4 1"
+script = ExtResource("6_vi1wl")
+new_scene_data = Array[ExtResource("2_aoot0")]([SubResource("Resource_vx52n")])
+metadata/_custom_type_script = "uid://j4r7acugbvn6"
+
+[connection signal="timeout" from="scene/handler/Timer" to="scene/handler" method="_on_timer_timeout"]
